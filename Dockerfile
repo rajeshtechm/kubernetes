@@ -10,7 +10,7 @@ RUN curl -O https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.30/bin/apache-to
 #RUN unzip apache*.zip
 RUN yum install -y zip
 RUN unzip apache*.zip
-RUN mv apache-tomcat-9.0.30 /opt/tomcat/.
+RUN mv apache-tomcat-9.0.30 /opt/tomcat/
 RUN yum -y install java
 RUN java -version
 
