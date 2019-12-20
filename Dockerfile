@@ -12,12 +12,13 @@ RUN yum install -y zip
 RUN unzip apache*.zip
 RUN mv apache-tomcat-9.0.30/* /opt/tomcat/.
 RUN yum -y install java
+RUN yum -y install sudo
 RUN java -version
 
 WORKDIR /opt/tomcat/webapps
 RUN curl -O -L https://github.com/rajeshtechm/kubernetes/blob/master/sparkjava-hello-world-1.0.war
 
 EXPOSE 8080
-
+CMD ["sudo -i", "run"]
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 
